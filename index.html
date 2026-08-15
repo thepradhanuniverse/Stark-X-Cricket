@@ -49,9 +49,197 @@
         sans-serif;
 
       color: var(--white);
-      overflow-x: hidden;
+      overflow: hidden;
     }
+/* =========================
+   HEIGHT RESPONSIVE MODE
+========================= */
 
+@media (max-height: 850px) {
+  .page {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .shell {
+    padding: 16px 20px;
+    border-radius: 22px;
+  }
+
+  .brand-label {
+    margin-bottom: 4px;
+    font-size: 9px;
+  }
+
+  .title {
+    font-size: clamp(26px, 5.8vw, 38px);
+    margin-bottom: 5px;
+  }
+
+  .tagline {
+    font-size: 9px;
+  }
+
+  .stats-row {
+    margin-top: 10px;
+    gap: 8px;
+  }
+
+  .stat {
+    min-height: 48px;
+    padding: 6px 8px;
+    border-radius: 13px;
+  }
+
+  .stat-value {
+    font-size: 19px;
+  }
+
+  .stat-label {
+    font-size: 7px;
+  }
+
+  .join-fast {
+    margin: 8px 0 6px;
+    font-size: 12px;
+  }
+
+  .action {
+    min-height: 46px;
+    border-radius: 13px;
+    font-size: 12px;
+  }
+
+  .telegram-icon {
+    width: 25px;
+    height: 25px;
+    font-size: 13px;
+  }
+
+  .logo-area {
+    margin: 9px 0 8px;
+  }
+
+  .logo-ring {
+    width: 125px;
+  }
+
+  .performance {
+    padding: 8px 10px;
+    border-radius: 13px;
+  }
+
+  .performance-title {
+    font-size: 9px;
+    margin-bottom: 2px;
+  }
+
+  .record {
+    min-height: 25px;
+    font-size: 9.5px;
+  }
+
+  .accuracy {
+    margin-top: 7px;
+    font-size: 9.5px;
+  }
+
+  .whatsapp {
+    margin-top: 9px;
+  }
+
+  .wa-icon {
+    font-size: 17px;
+  }
+}
+
+
+/* EXTRA COMPACT FOR SMALL LAPTOP SCREENS */
+
+@media (max-height: 700px) {
+  .page {
+    padding: 5px;
+  }
+
+  .shell {
+    padding: 11px 16px;
+    border-radius: 18px;
+  }
+
+  .brand-label {
+    font-size: 8px;
+    letter-spacing: 2px;
+    margin-bottom: 3px;
+  }
+
+  .title {
+    font-size: 27px;
+    letter-spacing: -1.3px;
+    margin-bottom: 3px;
+  }
+
+  .tagline {
+    font-size: 8px;
+  }
+
+  .stats-row {
+    margin-top: 7px;
+  }
+
+  .stat {
+    min-height: 42px;
+  }
+
+  .stat-value {
+    font-size: 17px;
+  }
+
+  .join-fast {
+    margin: 6px 0 5px;
+    font-size: 10px;
+  }
+
+  .action {
+    min-height: 40px;
+    font-size: 10px;
+  }
+
+  .telegram-icon {
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+  }
+
+  .logo-area {
+    margin: 6px 0 5px;
+  }
+
+  .logo-ring {
+    width: 105px;
+  }
+
+  .performance {
+    padding: 6px 8px;
+  }
+
+  .performance-title {
+    font-size: 8px;
+  }
+
+  .record {
+    min-height: 21px;
+    font-size: 8.5px;
+  }
+
+  .accuracy {
+    margin-top: 5px;
+    font-size: 8.5px;
+  }
+
+  .whatsapp {
+    margin-top: 6px;
+  }
+}
     /* =========================
        BACKGROUND
     ========================== */
