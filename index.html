@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+  />
+
+  <title>STARK X CRICKET</title>
+
+  <meta
+    name="description"
+    content="STARK X CRICKET — Nightmare for Bookies, Dream of Punters."
+  />
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #050b18;
+      --navy2: #091427;
+      --gold: #f4c95d;
+      --gold2: #ffe6a0;
+      --white: #ffffff;
+      --muted: #aeb7c8;
+      --line: rgba(244, 201, 93, 0.28);
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      background: #02050c;
+    }
+
+    body {
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      color: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       BACKGROUND
+    ========================== */
+
+    .page {
+      width: 100%;
+      min-height: 100svh;
+      min-height: 100dvh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding:
+        max(12px, env(safe-area-inset-top))
+        max(10px, env(safe-area-inset-right))
+        max(12px, env(safe-area-inset-bottom))
+        max(10px, env(safe-area-inset-left));
+
+      background:
+        radial-gradient(
+          circle at 50% 15%,
+          rgba(244, 201, 93, 0.11),
+          transparent 32%
+        ),
+        radial-gradient(
+          circle at 50% 75%,
+          rgba(20, 65, 125, 0.16),
+          transparent 38%
+        ),
+        linear-gradient(145deg, #02050b, #071020 48%, #02050c);
+    }
+
+    .shell {
+      position: relative;
+      width: min(100%, 560px);
+
+      border: 1px solid var(--line);
+      border-radius: clamp(20px, 4vw, 30px);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(13, 26, 47, 0.97),
+          rgba(4, 10, 21, 0.98)
+        );
+
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.025) inset,
+        0 20px 70px rgba(0, 0, 0, 0.65),
+        0 0 55px rgba(244, 201, 93, 0.06);
+
+      padding: clamp(18px, 4vw, 30px);
+
+      overflow: hidden;
+    }
+
+    .shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          120deg,
+          transparent 20%,
+          rgba(244, 201, 93, 0.04) 50%,
+          transparent 80%
+        );
+
+      pointer-events: none;
+    }
+
+    /* =========================
+       TOP BRAND
+    ========================== */
+
+    .brand-label {
+      text-align: center;
+      color: var(--gold);
+      font-size: clamp(9px, 2.1vw, 12px);
+      font-weight: 800;
+      letter-spacing: clamp(2px, 0.8vw, 4px);
+      text-transform: uppercase;
+      margin-bottom: 7px;
+      opacity: 0.92;
+    }
+
+    .title {
+      text-align: center;
+      font-size: clamp(29px, 7.8vw, 48px);
+      line-height: 0.95;
+      font-weight: 950;
+      letter-spacing: -1.8px;
+
+      white-space: nowrap;
+
+      background:
+        linear-gradient(
+          90deg,
+          #ffffff 0%,
+          #ffffff 42%,
+          var(--gold) 64%,
+          #fff0b7 100%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+
+      text-shadow:
+        0 0 22px rgba(244, 201, 93, 0.12);
+
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      text-align: center;
+      color: var(--muted);
+      font-size: clamp(9px, 2.25vw, 13px);
+      font-weight: 800;
+      letter-spacing: clamp(0.7px, 0.25vw, 1.5px);
+      text-transform: uppercase;
+      line-height: 1.3;
+    }
+
+    .tagline strong {
+      color: var(--gold2);
+    }
+
+    /* =========================
+       STATS ROW
+    ========================== */
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(8px, 2vw, 12px);
+
+      margin-top: clamp(14px, 3vw, 20px);
+    }
+
+    .stat {
+      min-width: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+
+      min-height: clamp(52px, 12vw, 68px);
+      padding: 8px 10px;
+
+      border: 1px solid rgba(244, 201, 93, 0.23);
+      border-radius: 17px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.045),
+          rgba(255, 255, 255, 0.015)
+        );
+
+      box-shadow:
+        0 0 20px rgba(244, 201, 93, 0.035) inset;
+    }
+
+    .stat-value {
+      color: var(--gold2);
+      font-size: clamp(18px, 5vw, 28px);
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .stat-label {
+      color: #c5cbd6;
+      font-size: clamp(7px, 1.8vw, 10px);
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .timer-box {
+      transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        color 0.25s ease;
+    }
+
+    .timer {
+      color: var(--gold2);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .timer-box.danger {
+      border-color: rgba(255, 55, 55, 0.9);
+      box-shadow:
+        0 0 20px rgba(255, 40, 40, 0.16),
+        inset 0 0 18px rgba(255, 40, 40, 0.05);
+    }
+
+    .timer-box.danger .timer {
+      color: #ff4b4b;
+      text-shadow: 0 0 15px rgba(255, 40, 40, 0.55);
+    }
+
+    /* =========================
+       JOIN FAST
+    ========================== */
+
+    .join-fast {
+      text-align: center;
+      margin: clamp(13px, 3vw, 18px) 0 10px;
+
+      color: var(--gold2);
+      font-size: clamp(12px, 3vw, 17px);
+      font-weight: 950;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      animation: softPulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes softPulse {
+      0%,
+      100% {
+        opacity: 0.82;
+        transform: translateY(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateY(-2px);
+      }
+    }
+
+    /* =========================
+       BUTTONS
+    ========================== */
+
+    .action {
+      width: 100%;
+      min-height: clamp(50px, 11vw, 62px);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      border-radius: 17px;
+      text-decoration: none;
+
+      font-size: clamp(12px, 3vw, 16px);
+      font-weight: 950;
+      letter-spacing: 0.7px;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .action:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.06);
+    }
+
+    .action:active {
+      transform: scale(0.985);
+    }
+
+    .telegram {
+      color: #111722;
+
+      background:
+        linear-gradient(
+          100deg,
+          #c99426,
+          #ffe18a 48%,
+          #e5ae35
+        );
+
+      border: 1px solid rgba(255, 232, 156, 0.75);
+
+      box-shadow:
+        0 0 22px rgba(244, 201, 93, 0.18),
+        0 8px 25px rgba(0, 0, 0, 0.3);
+
+      animation: buttonGlow 2.5s ease-in-out infinite;
+    }
+
+    .telegram-icon {
+      width: 30px;
+      height: 30px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background: #071120;
+      color: var(--gold2);
+
+      font-size: 16px;
+      flex: 0 0 auto;
+    }
+
+    .whatsapp {
+      margin-top: clamp(13px, 3vw, 18px);
+
+      color: #ffffff;
+
+      background:
+        linear-gradient(
+          100deg,
+          #087b45,
+          #20c878,
+          #0b9155
+        );
+
+      border: 1px solid rgba(93, 255, 177, 0.5);
+
+      box-shadow:
+        0 0 24px rgba(25, 211, 126, 0.18),
+        0 8px 25px rgba(0, 0, 0, 0.3);
+
+      animation: whatsappGlow 2.8s ease-in-out infinite;
+    }
+
+    .wa-icon {
+      font-size: 21px;
+    }
+
+    @keyframes buttonGlow {
+      0%,
+      100% {
+        box-shadow:
+          0 0 18px rgba(244, 201, 93, 0.14),
+          0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      50% {
+        box-shadow:
+          0 0 30px rgba(244, 201, 93, 0.34),
+          0 8px 28px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    @keyframes whatsappGlow {
+      0%,
+      100% {
+        box-shadow:
+          0 0 18px rgba(25, 211, 126, 0.12),
+          0 8px 25px rgba(0, 0, 0, 0.3);
+      }
+
+      50% {
+        box-shadow:
+          0 0 30px rgba(25, 211, 126, 0.32),
+          0 8px 28px rgba(0, 0, 0, 0.35);
+      }
+    }
+
+    /* =========================
+       LOGO
+    ========================== */
+
+    .logo-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      margin:
+        clamp(13px, 3vw, 20px)
+        0
+        clamp(10px, 2vw, 15px);
+    }
+
+    .logo-ring {
+      position: relative;
+
+      width: clamp(135px, 35vw, 205px);
+      aspect-ratio: 1;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(244, 201, 93, 0.3);
+
+      box-shadow:
+        0 0 0 6px rgba(244, 201, 93, 0.025),
+        0 0 0 12px rgba(244, 201, 93, 0.018),
+        0 0 38px rgba(244, 201, 93, 0.13);
+
+      animation: logoPulse 3.2s ease-in-out infinite;
+    }
+
+    .logo-ring::before,
+    .logo-ring::after {
+      content: "";
+      position: absolute;
+      inset: -8px;
+
+      border-radius: 50%;
+      border: 1px solid rgba(244, 201, 93, 0.13);
+
+      animation: spin 16s linear infinite;
+    }
+
+    .logo-ring::after {
+      inset: -15px;
+      border-style: dashed;
+      opacity: 0.38;
+      animation-duration: 25s;
+      animation-direction: reverse;
+    }
+
+    .logo {
+      width: 88%;
+      height: 88%;
+
+      object-fit: contain;
+      border-radius: 50%;
+
+      display: block;
+
+      filter:
+        drop-shadow(0 0 12px rgba(244, 201, 93, 0.22));
+
+      animation: logoGlow 3s ease-in-out infinite;
+    }
+
+    @keyframes logoPulse {
+      0%,
+      100% {
+        box-shadow:
+          0 0 0 6px rgba(244, 201, 93, 0.025),
+          0 0 0 12px rgba(244, 201, 93, 0.018),
+          0 0 30px rgba(244, 201, 93, 0.1);
+      }
+
+      50% {
+        box-shadow:
+          0 0 0 7px rgba(244, 201, 93, 0.04),
+          0 0 0 15px rgba(244, 201, 93, 0.025),
+          0 0 48px rgba(244, 201, 93, 0.2);
+      }
+    }
+
+    @keyframes logoGlow {
+      0%,
+      100% {
+        filter:
+          drop-shadow(0 0 10px rgba(244, 201, 93, 0.18));
+      }
+
+      50% {
+        filter:
+          drop-shadow(0 0 20px rgba(244, 201, 93, 0.35));
+      }
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* =========================
+       PERFORMANCE
+    ========================== */
+
+    .performance {
+      border: 1px solid rgba(244, 201, 93, 0.2);
+      border-radius: 17px;
+
+      padding: clamp(10px, 2.8vw, 16px);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.035),
+          rgba(255, 255, 255, 0.012)
+        );
+    }
+
+    .performance-title {
+      text-align: center;
+
+      color: var(--gold2);
+
+      font-size: clamp(10px, 2.4vw, 13px);
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      margin-bottom: 5px;
+    }
+
+    .record {
+      min-height: clamp(29px, 7vw, 38px);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: #f5f6f8;
+
+      font-size: clamp(10px, 2.65vw, 14px);
+      font-weight: 850;
+
+      text-align: center;
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.075);
+    }
+
+    .record:last-child {
+      border-bottom: none;
+    }
+
+    .accuracy {
+      text-align: center;
+
+      margin-top: clamp(10px, 2.4vw, 15px);
+
+      color: #f7f8fb;
+
+      font-size: clamp(10px, 2.6vw, 14px);
+      font-weight: 900;
+      line-height: 1.35;
+
+      text-transform: uppercase;
+    }
+
+    .accuracy span {
+      color: var(--gold2);
+    }
+
+    /* =========================
+       SMALL DEVICES
+    ========================== */
+
+    @media (max-width: 360px) {
+      .page {
+        padding: 7px;
+      }
+
+      .shell {
+        padding: 14px 12px;
+        border-radius: 18px;
+      }
+
+      .title {
+        font-size: 27px;
+        letter-spacing: -1.5px;
+      }
+
+      .tagline {
+        font-size: 8px;
+      }
+
+      .stats-row {
+        gap: 6px;
+      }
+
+      .stat {
+        min-height: 47px;
+        padding: 6px;
+        border-radius: 13px;
+      }
+
+      .stat-value {
+        font-size: 17px;
+      }
+
+      .stat-label {
+        font-size: 7px;
+      }
+
+      .action {
+        min-height: 46px;
+        border-radius: 14px;
+        font-size: 11px;
+      }
+
+      .telegram-icon {
+        width: 26px;
+        height: 26px;
+      }
+
+      .logo-ring {
+        width: 125px;
+      }
+
+      .performance {
+        padding: 8px;
+      }
+
+      .record {
+        font-size: 9.5px;
+        min-height: 27px;
+      }
+
+      .accuracy {
+        font-size: 9.5px;
+      }
+    }
+
+    /* =========================
+       WIDE DESKTOP
+    ========================== */
+
+    @media (min-width: 900px) {
+      .shell {
+        width: min(92vw, 560px);
+      }
+    }
+
+    /* =========================
+       ACCESSIBILITY
+    ========================== */
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="page">
+    <section class="shell">
+
+      <!-- BRAND -->
+      <div class="brand-label">
+        CRICKET INTELLIGENCE NETWORK
+      </div>
+
+      <h1 class="title">
+        STARK X CRICKET
+      </h1>
+
+      <p class="tagline">
+        NIGHTMARE FOR BOOKIES,
+        <strong>DREAM OF PUNTERS</strong>
+      </p>
+
+      <!-- SUBSCRIBER + TIMER -->
+      <div class="stats-row">
+
+        <div class="stat">
+          <div>
+            <div class="stat-value" id="subscriberCount">77,896</div>
+            <div class="stat-label">Subscribers</div>
+          </div>
+        </div>
+
+        <div class="stat timer-box" id="timerBox">
+          <div>
+            <div class="stat-value timer" id="timer">10</div>
+            <div class="stat-label">Join Timer (S)</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- JOIN FAST -->
+      <div class="join-fast">
+        JOIN FAST 👇
+      </div>
+
+      <!-- TELEGRAM -->
+      <a
+        class="action telegram"
+        href="https://telegram.me/+AgcwI8HCXQ80MWRl"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Join STARK X CRICKET Telegram Channel"
+      >
+        <span class="telegram-icon">➤</span>
+        <span>JOIN TELEGRAM CHANNEL</span>
+        <span>↗</span>
+      </a>
+
+      <!-- LOGO -->
+      <div class="logo-area">
+        <div class="logo-ring">
+          <img
+            class="logo"
+            src="stark-logo.png"
+            alt="STARK X CRICKET Official Logo"
+          />
+        </div>
+      </div>
+
+      <!-- PERFORMANCE -->
+      <section class="performance">
+
+        <div class="performance-title">
+          PREMIUM CRICKET REPORTS
+        </div>
+
+        <div class="record">
+          ☝️ IPL 2026 — 71/74 PASS ☝️
+        </div>
+
+        <div class="record">
+          ☝️ PSL 2026 — 43/44 PASS ☝️
+        </div>
+
+        <div class="record">
+          ☝️ LPL 2026 — 24/24 PASS ☝️
+        </div>
+
+        <div class="record">
+          ☝️ 100 MENS 2026 — 33/34 PASS ☝️
+        </div>
+
+        <div class="record">
+          ☝️ 100 WOMENS 2026 — 32/34 PASS ☝️
+        </div>
+
+      </section>
+
+      <div class="accuracy">
+        🔥 <span>100% ACCURACY</span> IN
+        IPL • PSL • LPL • 100 MENS • 100 WOMENS 🔥
+      </div>
+
+      <!-- WHATSAPP -->
+      <a
+        class="action whatsapp"
+        href="https://wa.me/message/E77CMVXIXEAZJ1"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with STARK X CRICKET on WhatsApp"
+      >
+        <span class="wa-icon">●</span>
+        <span>WHATSAPP CHAT</span>
+        <span>↗</span>
+      </a>
+
+    </section>
+  </main>
+
+  <script>
+    /* ==========================================
+       SUBSCRIBER COUNT
+       ========================================== */
+
+    const subscriberTarget = 77896;
+    const subscriberElement =
+      document.getElementById("subscriberCount");
+
+    function animateSubscribers() {
+      const duration = 1200;
+      const start = performance.now();
+
+      function update(now) {
+        const progress = Math.min(
+          (now - start) / duration,
+          1
+        );
+
+        const eased =
+          1 - Math.pow(1 - progress, 3);
+
+        const value = Math.floor(
+          subscriberTarget * eased
+        );
+
+        subscriberElement.textContent =
+          value.toLocaleString("en-IN");
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    animateSubscribers();
+
+
+    /* ==========================================
+       10 SECOND COUNTDOWN
+       ========================================== */
+
+    const timerElement =
+      document.getElementById("timer");
+
+    const timerBox =
+      document.getElementById("timerBox");
+
+    let seconds = 10;
+
+    function updateTimer() {
+      timerElement.textContent =
+        String(seconds).padStart(2, "0");
+
+      if (seconds <= 5) {
+        timerBox.classList.add("danger");
+      } else {
+        timerBox.classList.remove("danger");
+      }
+    }
+
+    updateTimer();
+
+    const countdown = setInterval(() => {
+      seconds--;
+
+      if (seconds < 0) {
+        seconds = 10;
+      }
+
+      updateTimer();
+    }, 1000);
+
+
+    /* ==========================================
+       TAP FEEDBACK
+       ========================================== */
+
+    document.querySelectorAll(".action").forEach((button) => {
+      button.addEventListener("click", () => {
+        button.style.transform = "scale(0.985)";
+
+        setTimeout(() => {
+          button.style.transform = "";
+        }, 140);
+      });
+    });
+  </script>
+
+</body>
+</html>
