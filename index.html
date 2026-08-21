@@ -48,7 +48,6 @@
 
 
     <style>
-
         * {
             box-sizing: border-box;
         }
@@ -62,141 +61,89 @@
             justify-content: center;
             text-align: center;
             color: #fff;
-
-            background:
-                radial-gradient(circle at top left, #071a3d, #0b2d5c 55%, #061326);
-
+            background: radial-gradient(
+                circle at top left,
+                #071a3d,
+                #0b2d5c 55%,
+                #061326
+            );
             padding: 14px;
         }
 
         .container {
             width: 100%;
             max-width: 390px;
-
             background: rgba(8, 28, 55, 0.88);
-
             border: 1px solid rgba(75, 150, 255, 0.45);
-
             border-radius: 18px;
-
             padding: 18px;
-
             box-shadow:
                 0 16px 36px rgba(0, 0, 0, 0.45),
                 0 0 30px rgba(40, 130, 255, 0.12);
-
             backdrop-filter: blur(5px);
         }
 
-
         .header-strip {
-
-            background:
-                linear-gradient(90deg, #dceeff, #8ec5ff);
-
+            background: linear-gradient(90deg, #dceeff, #8ec5ff);
             border-radius: 12px;
-
             padding: 10px;
-
             color: #071a32;
-
-            box-shadow:
-                inset 0 0 18px rgba(255, 255, 255, 0.22);
+            box-shadow: inset 0 0 18px rgba(255, 255, 255, 0.22);
         }
 
-
         .title {
-
             margin: 0;
-
             font-size: 22px;
-
             letter-spacing: 1px;
-
             text-transform: uppercase;
-
             font-weight: 800;
         }
 
-
         .subtitle {
-
             margin: 10px 0 12px;
-
             color: #ffffff;
-
             font-size: 18px;
-
             font-weight: 700;
         }
 
-
         .status-row {
-
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 10px;
-
             margin: 8px 0 12px;
         }
 
-
         .stat-box {
-
             background: rgba(255, 255, 255, 0.08);
-
             border: 1px solid rgba(255, 255, 255, 0.16);
-
             border-radius: 12px;
-
             padding: 10px 8px;
         }
 
-
         .stat-value {
-
             margin: 0;
-
             font-size: 25px;
-
             font-weight: 800;
-
             color: #bfe0ff;
-
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
         }
 
-
         .stat-label {
-
             margin: 2px 0 0;
-
             font-size: 12px;
-
             color: #e2e8f0;
-
             letter-spacing: 0.5px;
         }
 
-
         .join-fast {
-
             margin: 6px 0 12px;
-
             font-size: 18px;
-
             font-weight: 700;
-
             color: #9ed0ff;
-
             animation: pulse 0.7s infinite alternate;
         }
 
-
         @keyframes pulse {
-
             from {
                 opacity: 1;
                 transform: translateY(0);
@@ -208,148 +155,86 @@
             }
         }
 
-
         .join-btn {
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             gap: 9px;
-
             width: 100%;
-
             text-decoration: none;
-
             padding: 12px;
-
             border-radius: 30px;
-
             margin: 10px 0;
-
             font-size: 16px;
-
             font-weight: 700;
-
             color: #071a32;
-
-            background:
-                linear-gradient(90deg, #75baff, #3f8cff);
-
-            box-shadow:
-                0 8px 18px rgba(0, 0, 0, 0.22);
-
+            background: linear-gradient(90deg, #75baff, #3f8cff);
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
             transition: transform .22s ease;
         }
-
 
         .join-btn:hover,
         .whatsapp-btn:hover {
-
             transform: scale(1.03);
         }
 
-
         .profile {
-
             margin: 10px 0;
         }
-
 
         .profile img {
-
             width: 124px;
-
             height: 124px;
-
             border-radius: 50%;
-
             border: 3px solid #ffffff;
-
             object-fit: cover;
-
-            box-shadow:
-                0 0 20px rgba(80, 160, 255, 0.35);
+            box-shadow: 0 0 20px rgba(80, 160, 255, 0.35);
         }
 
-
         .info-list {
-
             list-style: none;
-
             padding: 0;
-
             margin: 10px 0;
-
             font-size: 17px;
-
             line-height: 1.35;
         }
 
-
         .info-list li {
-
             margin: 3px 0;
         }
 
-
         .accuracy {
-
             margin-top: 12px !important;
-
             font-size: 16px;
-
             font-weight: 800;
-
             line-height: 1.35;
         }
 
-
         .whatsapp-btn {
-
             display: flex;
-
             align-items: center;
-
             justify-content: center;
-
             gap: 10px;
-
             text-decoration: none;
-
             width: 100%;
-
             padding: 12px;
-
             border-radius: 30px;
-
             color: #fff;
-
             font-size: 16px;
-
             font-weight: 700;
-
-            background:
-                linear-gradient(
-                    -45deg,
-                    #075e54,
-                    #128c7e,
-                    #075e54,
-                    #128c7e
-                );
-
+            background: linear-gradient(
+                -45deg,
+                #075e54,
+                #128c7e,
+                #075e54,
+                #128c7e
+            );
             background-size: 300% 300%;
-
             animation: flow 3s linear infinite;
-
             transition: transform .22s ease;
         }
 
-
         @keyframes flow {
-
             0% {
                 background-position: 0% 50%;
             }
@@ -363,17 +248,12 @@
             }
         }
 
-
         .whatsapp-btn i {
-
             color: #ffffff;
-
             font-size: 22px;
         }
 
-
         @media (max-width: 480px) {
-
             .title {
                 font-size: 20px;
             }
@@ -390,7 +270,6 @@
                 font-size: 15px;
             }
         }
-
     </style>
 
 </head>
@@ -400,13 +279,8 @@
 
     <div class="container">
 
-
         <div class="header-strip">
-
-            <h1 class="title">
-                STARK X CRICKET
-            </h1>
-
+            <h1 class="title">STARK X CRICKET</h1>
         </div>
 
 
@@ -417,40 +291,21 @@
 
         <div class="status-row">
 
-
             <div class="stat-box">
-
-                <p class="stat-value" id="subCounter">
-                    0
-                </p>
-
-                <p class="stat-label">
-                    SUBSCRIBERS
-                </p>
-
+                <p class="stat-value" id="subCounter">0</p>
+                <p class="stat-label">SUBSCRIBERS</p>
             </div>
 
-
             <div class="stat-box">
-
-                <p class="stat-value" id="seconds">
-                    10
-                </p>
-
-                <p class="stat-label">
-                    JOIN TIMER (S)
-                </p>
-
+                <p class="stat-value" id="seconds">10</p>
+                <p class="stat-label">JOIN TIMER (S)</p>
             </div>
-
 
         </div>
 
 
         <p class="join-fast">
-
             JOIN FAST <span>👇</span>
-
         </p>
 
 
@@ -469,41 +324,33 @@
 
 
         <div class="profile">
-
             <img
-                src="stark.jpg"
+                src="stark-logo.png"
                 alt="STARK X CRICKET">
-
         </div>
 
 
         <ul class="info-list">
 
-
             <li>
                 👉 𝗜𝗣𝗟 𝟮𝟬𝟮𝟲 - 𝟳𝟯/𝟳𝟰 𝗣𝗔𝗦𝗦 ✔
             </li>
-
 
             <li>
                 👉 𝗣𝗦𝗟 𝟮𝟬𝟮𝟲 - 𝟯𝟯/𝟯𝟰 𝗣𝗔𝗦𝗦 ✔
             </li>
 
-
             <li>
                 👉 𝗟𝗣𝗟 𝟮𝟬𝟮𝟲 - 𝟮𝟰/𝟮𝟰 𝗣𝗔𝗦𝗦 ✔
             </li>
-
 
             <li>
                 👉 𝗧𝗛𝗘 𝟭𝟬𝟬 𝗠𝗘𝗡 - 𝟯𝟮/𝟯𝟰 𝗣𝗔𝗦𝗦 ✔
             </li>
 
-
             <li class="accuracy">
                 🔥 𝟭𝟬𝟬% 𝗔𝗖𝗖𝗨𝗥𝗔𝗖𝗬 𝗜𝗡 𝗜𝗣𝗟 - 𝗣𝗦𝗟 - 𝗟𝗣𝗟 - 𝗧𝗛𝗘 𝟭𝟬𝟬 𝗠𝗘𝗡𝗦 - 𝗧𝗛𝗘 𝟭𝟬𝟬 𝗪𝗢𝗠𝗘𝗡𝗦 🔥
             </li>
-
 
         </ul>
 
@@ -518,105 +365,81 @@
 
         </a>
 
-
     </div>
 
 
     <script>
-
 
         /* SUBSCRIBER COUNTER */
 
         (function () {
 
             var target = 66789;
-
             var count = 0;
-
-            var el =
-                document.getElementById("subCounter");
-
+            var el = document.getElementById("subCounter");
 
             function tick() {
 
                 if (count < target) {
 
-                    count +=
-                        Math.ceil(target / 260);
+                    count += Math.ceil(target / 260);
 
                     if (count > target) {
                         count = target;
                     }
 
-                    el.textContent =
-                        count.toLocaleString();
+                    el.textContent = count.toLocaleString();
 
                     setTimeout(tick, 10);
 
                 } else {
 
-                    el.textContent =
-                        target.toLocaleString();
+                    el.textContent = target.toLocaleString();
 
                 }
-
             }
-
 
             tick();
 
         }());
 
 
-        /* JOIN TIMER + LEAD EVENT */
+        /* JOIN TIMER + META LEAD EVENT */
 
         (function () {
 
             var seconds = 10;
-
-            var timer =
-                document.getElementById("seconds");
+            var timer = document.getElementById("seconds");
 
             var telegramUrl =
                 "https://telegram.me/+AgcwI8HCXQ80MWRl";
 
+            var interval = setInterval(function () {
 
-            var interval =
-                setInterval(function () {
+                if (seconds > 0) {
 
+                    seconds--;
+                    timer.textContent = seconds;
 
-                    if (seconds > 0) {
+                } else {
 
-                        seconds--;
+                    clearInterval(interval);
 
-                        timer.textContent =
-                            seconds;
+                    fbq("track", "Lead");
 
-                    } else {
+                    setTimeout(function () {
 
-                        clearInterval(interval);
+                        window.location.href = telegramUrl;
 
+                    }, 150);
 
-                        /* META LEAD EVENT */
+                }
 
-                        fbq("track", "Lead");
+            }, 1000);
 
-
-                        setTimeout(function () {
-
-                            window.location.href =
-                                telegramUrl;
-
-                        }, 150);
-
-                    }
-
-                }, 1000);
-
-            }());
+        }());
 
     </script>
-
 
 </body>
 
