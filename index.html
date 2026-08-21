@@ -1,992 +1,623 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0,
-      maximum-scale=1.0, user-scalable=no">
-
-<title>STARK X CRICKET</title>
-
-<meta name="description"
-      content="STARK X CRICKET — Nightmare for Bookies, Dream of Punters.">
-
-<style>
-
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-:root{
-  --bg:#020711;
-  --navy:#071426;
-  --navy2:#0b1b32;
-  --gold:#f4c95d;
-  --gold2:#ffe8a3;
-  --white:#ffffff;
-  --muted:#aeb8c9;
-  --line:rgba(244,201,93,.28);
-}
-
-/* =========================
-   PAGE
-========================= */
-
-html,
-body{
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  background:var(--bg);
-}
-
-body{
-  font-family:
-    Inter,
-    Arial,
-    Helvetica,
-    sans-serif;
-
-  color:var(--white);
-}
-
-/* =========================
-   MAIN SCREEN
-========================= */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.page{
-  width:100%;
-  height:100dvh;
-  height:100vh;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  padding:6px;
-
-  background:
-    radial-gradient(
-      circle at 50% 10%,
-      rgba(244,201,93,.12),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 50% 80%,
-      rgba(20,70,140,.20),
-      transparent 45%
-    ),
-    linear-gradient(
-      145deg,
-      #02050b,
-      #071426 50%,
-      #02050c
-    );
-}
+    <title>STARK X CRICKET</title>
 
-/* =========================
-   MAIN CARD
-========================= */
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-.shell{
-  width:min(100%,560px);
+    <!-- META PIXEL - STARK X CRICKET -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) :
+                    n.queue.push(arguments);
+            };
 
-  height:calc(100dvh - 12px);
-  max-height:calc(100vh - 12px);
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = "2.0";
+            n.queue = [];
 
-  padding:clamp(10px,2.3vh,22px)
-          clamp(12px,3vw,25px);
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
 
-  border:1px solid var(--line);
-  border-radius:24px;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s);
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(13,29,52,.98),
-      rgba(3,9,19,.99)
-    );
+        }(window, document, "script",
+            "https://connect.facebook.net/en_US/fbevents.js");
 
-  box-shadow:
-    0 0 0 1px rgba(255,255,255,.025) inset,
-    0 15px 55px rgba(0,0,0,.7),
-    0 0 45px rgba(244,201,93,.06);
+        fbq("init", "1088375030386300");
+        fbq("track", "PageView");
+    </script>
 
-  display:flex;
-  flex-direction:column;
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1088375030386300&ev=PageView&noscript=1"
+            alt="pixel">
+    </noscript>
 
-  justify-content:flex-start;
 
-  overflow:hidden;
-}
+    <style>
 
-/* =========================
-   BRAND
-========================= */
+        * {
+            box-sizing: border-box;
+        }
 
-.brand-label{
-  text-align:center;
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Poppins", sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #fff;
 
-  color:var(--gold);
+            background:
+                radial-gradient(circle at top left, #071a3d, #0b2d5c 55%, #061326);
 
-  font-size:clamp(7px,1.8vw,11px);
-  font-weight:900;
+            padding: 14px;
+        }
 
-  letter-spacing:clamp(1.5px,.6vw,3px);
+        .container {
+            width: 100%;
+            max-width: 390px;
 
-  margin-bottom:4px;
+            background: rgba(8, 28, 55, 0.88);
 
-  text-transform:uppercase;
-}
+            border: 1px solid rgba(75, 150, 255, 0.45);
 
-.title{
-  text-align:center;
+            border-radius: 18px;
 
-  font-size:clamp(27px,7vw,46px);
+            padding: 18px;
 
-  line-height:.95;
+            box-shadow:
+                0 16px 36px rgba(0, 0, 0, 0.45),
+                0 0 30px rgba(40, 130, 255, 0.12);
 
-  font-weight:950;
+            backdrop-filter: blur(5px);
+        }
 
-  letter-spacing:-1.5px;
 
-  white-space:nowrap;
+        .header-strip {
 
-  background:
-    linear-gradient(
-      90deg,
-      #fff 0%,
-      #fff 42%,
-      var(--gold) 67%,
-      #fff0b7 100%
-    );
+            background:
+                linear-gradient(90deg, #dceeff, #8ec5ff);
 
-  -webkit-background-clip:text;
-  background-clip:text;
+            border-radius: 12px;
 
-  color:transparent;
+            padding: 10px;
 
-  margin-bottom:4px;
-}
+            color: #071a32;
 
-.tagline{
-  text-align:center;
+            box-shadow:
+                inset 0 0 18px rgba(255, 255, 255, 0.22);
+        }
 
-  color:var(--muted);
 
-  font-size:clamp(7px,2vw,12px);
+        .title {
 
-  font-weight:850;
+            margin: 0;
 
-  letter-spacing:.7px;
+            font-size: 22px;
 
-  line-height:1.15;
+            letter-spacing: 1px;
 
-  text-transform:uppercase;
-}
+            text-transform: uppercase;
 
-.tagline strong{
-  color:var(--gold2);
-}
+            font-weight: 800;
+        }
 
-/* =========================
-   STATS
-========================= */
 
-.stats-row{
-  display:grid;
+        .subtitle {
 
-  grid-template-columns:1fr 1fr;
+            margin: 10px 0 12px;
 
-  gap:8px;
+            color: #ffffff;
 
-  margin-top:clamp(8px,1.8vh,14px);
-}
+            font-size: 18px;
 
-.stat{
-  height:clamp(43px,8vh,62px);
+            font-weight: 700;
+        }
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
 
-  text-align:center;
+        .status-row {
 
-  border:1px solid rgba(244,201,93,.25);
+            display: grid;
 
-  border-radius:13px;
+            grid-template-columns: 1fr 1fr;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.045),
-      rgba(255,255,255,.012)
-    );
-}
+            gap: 10px;
 
-.stat-value{
-  color:var(--gold2);
+            margin: 8px 0 12px;
+        }
 
-  font-size:clamp(17px,4.5vw,27px);
 
-  line-height:1;
+        .stat-box {
 
-  font-weight:950;
-}
+            background: rgba(255, 255, 255, 0.08);
 
-.stat-label{
-  color:#c5cbd6;
+            border: 1px solid rgba(255, 255, 255, 0.16);
 
-  font-size:clamp(6px,1.6vw,9px);
+            border-radius: 12px;
 
-  font-weight:800;
+            padding: 10px 8px;
+        }
 
-  letter-spacing:.8px;
 
-  text-transform:uppercase;
+        .stat-value {
 
-  margin-top:2px;
-}
+            margin: 0;
 
-/* =========================
-   TIMER
-========================= */
+            font-size: 25px;
 
-.timer{
-  font-variant-numeric:tabular-nums;
-}
+            font-weight: 800;
 
-.timer-box.danger{
-  border-color:rgba(255,60,60,.9);
+            color: #bfe0ff;
 
-  box-shadow:
-    0 0 18px rgba(255,40,40,.16) inset;
-}
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+        }
 
-.timer-box.danger .timer{
-  color:#ff5555;
 
-  text-shadow:
-    0 0 12px rgba(255,40,40,.5);
-}
+        .stat-label {
 
-/* =========================
-   JOIN FAST
-========================= */
+            margin: 2px 0 0;
 
-.join-fast{
-  text-align:center;
+            font-size: 12px;
 
-  color:var(--gold2);
+            color: #e2e8f0;
 
-  font-size:clamp(10px,2.6vw,15px);
+            letter-spacing: 0.5px;
+        }
 
-  font-weight:950;
 
-  letter-spacing:1px;
+        .join-fast {
 
-  margin:
-    clamp(7px,1.5vh,12px)
-    0
-    6px;
+            margin: 6px 0 12px;
 
-  text-transform:uppercase;
-}
+            font-size: 18px;
 
-/* =========================
-   BUTTONS
-========================= */
+            font-weight: 700;
 
-.action{
-  width:100%;
+            color: #9ed0ff;
 
-  height:clamp(42px,7.5vh,56px);
+            animation: pulse 0.7s infinite alternate;
+        }
 
-  display:flex;
 
-  align-items:center;
+        @keyframes pulse {
 
-  justify-content:center;
+            from {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-  gap:8px;
+            to {
+                opacity: 0.45;
+                transform: translateY(-2px);
+            }
+        }
 
-  border-radius:13px;
 
-  text-decoration:none;
+        .join-btn {
 
-  font-size:clamp(10px,2.7vw,15px);
+            display: flex;
 
-  font-weight:950;
+            align-items: center;
 
-  letter-spacing:.5px;
+            justify-content: center;
 
-  flex-shrink:0;
-}
+            gap: 9px;
 
-.telegram{
-  color:#111722;
+            width: 100%;
 
-  background:
-    linear-gradient(
-      100deg,
-      #c99426,
-      #ffe18a 48%,
-      #e5ae35
-    );
+            text-decoration: none;
 
-  border:1px solid rgba(255,232,156,.8);
+            padding: 12px;
 
-  box-shadow:
-    0 0 20px rgba(244,201,93,.18),
-    0 7px 20px rgba(0,0,0,.3);
-}
+            border-radius: 30px;
 
-.telegram-icon{
-  width:25px;
-  height:25px;
+            margin: 10px 0;
 
-  display:grid;
-  place-items:center;
+            font-size: 16px;
 
-  border-radius:50%;
+            font-weight: 700;
 
-  background:#071120;
+            color: #071a32;
 
-  color:var(--gold2);
+            background:
+                linear-gradient(90deg, #75baff, #3f8cff);
 
-  font-size:14px;
-}
+            box-shadow:
+                0 8px 18px rgba(0, 0, 0, 0.22);
 
-.action:active{
-  transform:scale(.985);
-}
+            transition: transform .22s ease;
+        }
 
-/* =========================
-   LOGO
-========================= */
 
-.logo-area{
-  display:flex;
+        .join-btn:hover,
+        .whatsapp-btn:hover {
 
-  align-items:center;
-  justify-content:center;
+            transform: scale(1.03);
+        }
 
-  margin:
-    clamp(7px,1.5vh,13px)
-    0;
-}
 
-.logo-ring{
-  width:clamp(95px,21vh,165px);
+        .profile {
 
-  aspect-ratio:1;
+            margin: 10px 0;
+        }
 
-  display:grid;
-  place-items:center;
 
-  border-radius:50%;
+        .profile img {
 
-  border:1px solid rgba(244,201,93,.38);
+            width: 124px;
 
-  box-shadow:
-    0 0 0 5px rgba(244,201,93,.025),
-    0 0 0 10px rgba(244,201,93,.018),
-    0 0 35px rgba(244,201,93,.15);
+            height: 124px;
 
-  flex-shrink:0;
-}
+            border-radius: 50%;
 
-.logo{
-  width:88%;
-  height:88%;
+            border: 3px solid #ffffff;
 
-  object-fit:contain;
+            object-fit: cover;
 
-  border-radius:50%;
+            box-shadow:
+                0 0 20px rgba(80, 160, 255, 0.35);
+        }
 
-  display:block;
 
-  filter:
-    drop-shadow(
-      0 0 12px
-      rgba(244,201,93,.28)
-    );
-}
+        .info-list {
 
-/* =========================
-   PERFORMANCE
-========================= */
+            list-style: none;
 
-.performance{
-  border:1px solid rgba(244,201,93,.2);
+            padding: 0;
 
-  border-radius:13px;
+            margin: 10px 0;
 
-  padding:7px 10px;
+            font-size: 17px;
 
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.035),
-      rgba(255,255,255,.012)
-    );
+            line-height: 1.35;
+        }
 
-  flex-shrink:0;
-}
 
-.performance-title{
-  text-align:center;
+        .info-list li {
 
-  color:var(--gold2);
+            margin: 3px 0;
+        }
 
-  font-size:clamp(8px,2vw,12px);
 
-  font-weight:900;
+        .accuracy {
 
-  letter-spacing:1px;
+            margin-top: 12px !important;
 
-  text-transform:uppercase;
+            font-size: 16px;
 
-  margin-bottom:2px;
-}
+            font-weight: 800;
 
-.record{
-  min-height:clamp(22px,4.1vh,31px);
+            line-height: 1.35;
+        }
 
-  display:flex;
 
-  align-items:center;
+        .whatsapp-btn {
 
-  justify-content:center;
+            display: flex;
 
-  color:#f5f6f8;
+            align-items: center;
 
-  font-size:clamp(8px,2.2vw,12px);
+            justify-content: center;
 
-  font-weight:850;
+            gap: 10px;
 
-  text-align:center;
+            text-decoration: none;
 
-  border-bottom:
-    1px solid
-    rgba(255,255,255,.07);
-}
+            width: 100%;
 
-.record:last-child{
-  border-bottom:none;
-}
+            padding: 12px;
 
-/* =========================
-   ACCURACY
-========================= */
+            border-radius: 30px;
 
-.accuracy{
-  text-align:center;
+            color: #fff;
 
-  color:#f7f8fb;
+            font-size: 16px;
 
-  font-size:clamp(8px,2.1vw,12px);
+            font-weight: 700;
 
-  font-weight:900;
+            background:
+                linear-gradient(
+                    -45deg,
+                    #075e54,
+                    #128c7e,
+                    #075e54,
+                    #128c7e
+                );
 
-  line-height:1.25;
+            background-size: 300% 300%;
 
-  text-transform:uppercase;
+            animation: flow 3s linear infinite;
 
-  margin:
-    clamp(6px,1.2vh,10px)
-    0;
-}
+            transition: transform .22s ease;
+        }
 
-.accuracy span{
-  color:var(--gold2);
-}
 
-/* =========================
-   WHATSAPP
-========================= */
+        @keyframes flow {
 
-.whatsapp{
-  color:#fff;
+            0% {
+                background-position: 0% 50%;
+            }
 
-  background:
-    linear-gradient(
-      100deg,
-      #087b45,
-      #20c878,
-      #0b9155
-    );
+            50% {
+                background-position: 100% 50%;
+            }
 
-  border:1px solid rgba(93,255,177,.5);
+            100% {
+                background-position: 0% 50%;
+            }
+        }
 
-  box-shadow:
-    0 0 20px rgba(25,211,126,.18),
-    0 7px 20px rgba(0,0,0,.3);
-}
 
-.wa-icon{
-  width:25px;
-  height:25px;
+        .whatsapp-btn i {
 
-  display:grid;
-  place-items:center;
+            color: #ffffff;
 
-  border-radius:50%;
+            font-size: 22px;
+        }
 
-  background:#fff;
 
-  color:#0b9155;
+        @media (max-width: 480px) {
 
-  font-size:13px;
-}
+            .title {
+                font-size: 20px;
+            }
 
-/* =========================
-   SHORT HEIGHT PHONES
-========================= */
+            .subtitle {
+                font-size: 16px;
+            }
 
-@media(max-height:700px){
+            .info-list {
+                font-size: 16px;
+            }
 
-  .shell{
-    padding:
-      8px
-      12px;
-  }
+            .accuracy {
+                font-size: 15px;
+            }
+        }
 
-  .brand-label{
-    font-size:7px;
-  }
+    </style>
 
-  .title{
-    font-size:28px;
-  }
-
-  .tagline{
-    font-size:7px;
-  }
-
-  .stats-row{
-    margin-top:6px;
-  }
-
-  .stat{
-    height:43px;
-  }
-
-  .join-fast{
-    margin:6px 0 4px;
-    font-size:10px;
-  }
-
-  .action{
-    height:42px;
-  }
-
-  .logo-area{
-    margin:5px 0;
-  }
-
-  .logo-ring{
-    width:96px;
-  }
-
-  .performance{
-    padding:5px 8px;
-  }
-
-  .record{
-    min-height:22px;
-    font-size:8px;
-  }
-
-  .accuracy{
-    margin:5px 0;
-    font-size:8px;
-  }
-}
-
-/* =========================
-   VERY SHORT SCREEN
-========================= */
-
-@media(max-height:600px){
-
-  .shell{
-    padding:5px 10px;
-  }
-
-  .brand-label{
-    font-size:6px;
-    margin-bottom:2px;
-  }
-
-  .title{
-    font-size:24px;
-  }
-
-  .tagline{
-    font-size:6px;
-  }
-
-  .stats-row{
-    gap:5px;
-    margin-top:4px;
-  }
-
-  .stat{
-    height:36px;
-    border-radius:9px;
-  }
-
-  .stat-value{
-    font-size:15px;
-  }
-
-  .stat-label{
-    font-size:5px;
-  }
-
-  .join-fast{
-    margin:3px 0;
-    font-size:8px;
-  }
-
-  .action{
-    height:35px;
-    border-radius:9px;
-    font-size:9px;
-  }
-
-  .telegram-icon,
-  .wa-icon{
-    width:21px;
-    height:21px;
-  }
-
-  .logo-area{
-    margin:3px 0;
-  }
-
-  .logo-ring{
-    width:75px;
-  }
-
-  .performance{
-    padding:3px 6px;
-  }
-
-  .performance-title{
-    font-size:7px;
-  }
-
-  .record{
-    min-height:17px;
-    font-size:6.5px;
-  }
-
-  .accuracy{
-    margin:3px 0;
-    font-size:6.5px;
-  }
-}
-
-</style>
 </head>
+
 
 <body>
 
-<main class="page">
+    <div class="container">
 
-<section class="shell">
 
-<!-- BRAND -->
+        <div class="header-strip">
 
-<div class="brand-label">
-CRICKET INTELLIGENCE NETWORK
-</div>
+            <h1 class="title">
+                STARK X CRICKET
+            </h1>
 
-<h1 class="title">
-STARK X CRICKET
-</h1>
+        </div>
 
-<p class="tagline">
-NIGHTMARE FOR BOOKIES,
-<strong>DREAM OF PUNTERS</strong>
-</p>
 
+        <p class="subtitle">
+            👑 KING OF CRICKET TIPPING 👑
+        </p>
 
-<!-- STATS -->
 
-<div class="stats-row">
+        <div class="status-row">
 
-<div class="stat">
 
-<div>
-<div
-class="stat-value"
-id="subscriberCount"
->
-77,896
-</div>
+            <div class="stat-box">
 
-<div class="stat-label">
-Subscribers
-</div>
+                <p class="stat-value" id="subCounter">
+                    0
+                </p>
 
-</div>
+                <p class="stat-label">
+                    SUBSCRIBERS
+                </p>
 
-</div>
+            </div>
 
 
-<div
-class="stat timer-box"
-id="timerBox"
->
+            <div class="stat-box">
 
-<div>
+                <p class="stat-value" id="seconds">
+                    10
+                </p>
 
-<div
-class="stat-value timer"
-id="timer"
->
-10
-</div>
+                <p class="stat-label">
+                    JOIN TIMER (S)
+                </p>
 
-<div class="stat-label">
-Join Timer (S)
-</div>
+            </div>
 
-</div>
 
-</div>
+        </div>
 
-</div>
 
+        <p class="join-fast">
 
-<!-- JOIN -->
+            JOIN FAST <span>👇</span>
 
-<div class="join-fast">
-JOIN FAST 👇
-</div>
+        </p>
 
 
-<!-- TELEGRAM -->
+        <a
+            href="https://telegram.me/+AgcwI8HCXQ80MWRl"
+            class="join-btn">
 
-<a
-class="action telegram"
-href="https://telegram.me/+AgcwI8HCXQ80MWRl"
-target="_blank"
-rel="noopener noreferrer"
->
+            JOIN TELEGRAM CHANNEL
 
-<span class="telegram-icon">
-➤
-</span>
+            <i
+                class="fa fa-telegram"
+                style="font-size:23px;color:#ffffff">
+            </i>
 
-<span>
-JOIN TELEGRAM CHANNEL
-</span>
+        </a>
 
-<span>
-↗
-</span>
 
-</a>
+        <div class="profile">
 
+            <img
+                src="stark.jpg"
+                alt="STARK X CRICKET">
 
-<!-- LOGO -->
+        </div>
 
-<div class="logo-area">
 
-<div class="logo-ring">
+        <ul class="info-list">
 
-<img
-class="logo"
-src="stark-logo.png"
-alt="STARK X CRICKET Official Logo"
->
 
-</div>
+            <li>
+                👉 𝗜𝗣𝗟 𝟮𝟬𝟮𝟲 - 𝟳𝟯/𝟳𝟰 𝗣𝗔𝗦𝗦 ✔
+            </li>
 
-</div>
 
+            <li>
+                👉 𝗣𝗦𝗟 𝟮𝟬𝟮𝟲 - 𝟯𝟯/𝟯𝟰 𝗣𝗔𝗦𝗦 ✔
+            </li>
 
-<!-- PERFORMANCE -->
 
-<section class="performance">
+            <li>
+                👉 𝗟𝗣𝗟 𝟮𝟬𝟮𝟲 - 𝟮𝟰/𝟮𝟰 𝗣𝗔𝗦𝗦 ✔
+            </li>
 
-<div class="performance-title">
-PREMIUM CRICKET REPORTS
-</div>
 
-<div class="record">
-☝️ IPL 2026 — 71/74 PASS ☝️
-</div>
+            <li>
+                👉 𝗧𝗛𝗘 𝟭𝟬𝟬 𝗠𝗘𝗡 - 𝟯𝟮/𝟯𝟰 𝗣𝗔𝗦𝗦 ✔
+            </li>
 
-<div class="record">
-☝️ PSL 2026 — 43/44 PASS ☝️
-</div>
 
-<div class="record">
-☝️ LPL 2026 — 24/24 PASS ☝️
-</div>
+            <li class="accuracy">
+                🔥 𝟭𝟬𝟬% 𝗔𝗖𝗖𝗨𝗥𝗔𝗖𝗬 𝗜𝗡 𝗜𝗣𝗟 - 𝗣𝗦𝗟 - 𝗟𝗣𝗟 - 𝗧𝗛𝗘 𝟭𝟬𝟬 𝗠𝗘𝗡𝗦 - 𝗧𝗛𝗘 𝟭𝟬𝟬 𝗪𝗢𝗠𝗘𝗡𝗦 🔥
+            </li>
 
-<div class="record">
-☝️ 100 MENS 2026 — 33/34 PASS ☝️
-</div>
 
-<div class="record">
-☝️ 100 WOMENS 2026 — 32/34 PASS ☝️
-</div>
+        </ul>
 
-</section>
 
+        <a
+            href="https://wa.me/message/E77CMVXIXEAZJ1"
+            class="whatsapp-btn">
 
-<!-- ACCURACY -->
+            WHATSAPP CHAT
 
-<div class="accuracy">
+            <i class="fa fa-whatsapp"></i>
 
-🔥 <span>100% ACCURACY</span> IN
-<br>
-IPL • PSL • LPL • 100 MENS • 100 WOMENS 🔥
+        </a>
 
-</div>
 
+    </div>
 
-<!-- WHATSAPP -->
 
-<a
-class="action whatsapp"
-href="https://wa.me/message/E77CMVXIXEAZJ1"
-target="_blank"
-rel="noopener noreferrer"
->
+    <script>
 
-<span class="wa-icon">
-●
-</span>
 
-<span>
-WHATSAPP CHAT
-</span>
+        /* SUBSCRIBER COUNTER */
 
-<span>
-↗
-</span>
+        (function () {
 
-</a>
+            var target = 66789;
 
-</section>
+            var count = 0;
 
-</main>
+            var el =
+                document.getElementById("subCounter");
 
 
-<script>
+            function tick() {
 
-/* =========================
-   SUBSCRIBER ANIMATION
-========================= */
+                if (count < target) {
 
-const subscriberTarget = 77896;
+                    count +=
+                        Math.ceil(target / 260);
 
-const subscriberElement =
-document.getElementById(
-  "subscriberCount"
-);
+                    if (count > target) {
+                        count = target;
+                    }
 
-const duration = 900;
+                    el.textContent =
+                        count.toLocaleString();
 
-const start = performance.now();
+                    setTimeout(tick, 10);
 
-function animateSubscribers(now){
+                } else {
 
-  const progress =
-    Math.min(
-      (now - start) / duration,
-      1
-    );
+                    el.textContent =
+                        target.toLocaleString();
 
-  const eased =
-    1 - Math.pow(
-      1 - progress,
-      3
-    );
+                }
 
-  const value =
-    Math.floor(
-      subscriberTarget * eased
-    );
+            }
 
-  subscriberElement.textContent =
-    value.toLocaleString("en-IN");
 
-  if(progress < 1){
+            tick();
 
-    requestAnimationFrame(
-      animateSubscribers
-    );
+        }());
 
-  }
 
-}
+        /* JOIN TIMER + LEAD EVENT */
 
-requestAnimationFrame(
-  animateSubscribers
-);
+        (function () {
 
+            var seconds = 10;
 
-/* =========================
-   COUNTDOWN
-========================= */
+            var timer =
+                document.getElementById("seconds");
 
-const timerElement =
-document.getElementById("timer");
+            var telegramUrl =
+                "https://telegram.me/+AgcwI8HCXQ80MWRl";
 
-const timerBox =
-document.getElementById("timerBox");
 
-let seconds = 10;
+            var interval =
+                setInterval(function () {
 
-function updateTimer(){
 
-  timerElement.textContent =
-    String(seconds).padStart(2,"0");
+                    if (seconds > 0) {
 
-  if(seconds <= 5){
+                        seconds--;
 
-    timerBox.classList.add(
-      "danger"
-    );
+                        timer.textContent =
+                            seconds;
 
-  }else{
+                    } else {
 
-    timerBox.classList.remove(
-      "danger"
-    );
+                        clearInterval(interval);
 
-  }
 
-}
+                        /* META LEAD EVENT */
 
-updateTimer();
+                        fbq("track", "Lead");
 
-setInterval(function(){
 
-  seconds--;
+                        setTimeout(function () {
 
-  if(seconds < 0){
+                            window.location.href =
+                                telegramUrl;
 
-    seconds = 10;
+                        }, 150);
 
-  }
+                    }
 
-  updateTimer();
+                }, 1000);
 
-},1000);
+            }());
 
-</script>
+    </script>
+
 
 </body>
+
 </html>
