@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>STARK X CRICKET</title>
+    <title>STARK BHAI</title>
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -45,7 +45,6 @@
             src="https://www.facebook.com/tr?id=1088375030386300&ev=PageView&noscript=1"
             alt="pixel">
     </noscript>
-
 
     <style>
         * {
@@ -155,6 +154,8 @@
             }
         }
 
+        /* TELEGRAM BUTTON */
+
         .join-btn {
             display: flex;
             align-items: center;
@@ -169,17 +170,50 @@
             font-weight: 700;
             color: #071a32;
             background: linear-gradient(90deg, #75baff, #3f8cff);
-            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.22);
+
+            box-shadow:
+                0 0 10px rgba(80, 170, 255, 0.55),
+                0 0 22px rgba(60, 140, 255, 0.35),
+                0 8px 18px rgba(0, 0, 0, 0.22);
+
+            animation: telegramPop 1.8s ease-in-out infinite;
             transition: transform .22s ease;
         }
 
-        .join-btn:hover,
-        .whatsapp-btn:hover {
-            transform: scale(1.03);
+        .join-btn:hover {
+            transform: scale(1.04);
         }
+
+        @keyframes telegramPop {
+
+            0% {
+                transform: scale(1);
+                box-shadow:
+                    0 0 10px rgba(80, 170, 255, 0.45),
+                    0 0 20px rgba(60, 140, 255, 0.25);
+            }
+
+            50% {
+                transform: scale(1.035);
+                box-shadow:
+                    0 0 18px rgba(100, 190, 255, 0.85),
+                    0 0 35px rgba(60, 140, 255, 0.55);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow:
+                    0 0 10px rgba(80, 170, 255, 0.45),
+                    0 0 20px rgba(60, 140, 255, 0.25);
+            }
+        }
+
+        /* LOGO GLOW + MOTION */
 
         .profile {
             margin: 10px 0;
+            display: flex;
+            justify-content: center;
         }
 
         .profile img {
@@ -188,7 +222,40 @@
             border-radius: 50%;
             border: 3px solid #ffffff;
             object-fit: cover;
-            box-shadow: 0 0 20px rgba(80, 160, 255, 0.35);
+
+            box-shadow:
+                0 0 12px rgba(80, 160, 255, 0.7),
+                0 0 28px rgba(60, 140, 255, 0.5),
+                0 0 45px rgba(40, 120, 255, 0.25);
+
+            animation: logoFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes logoFloat {
+
+            0% {
+                transform: translateY(0) scale(1);
+                box-shadow:
+                    0 0 12px rgba(80, 160, 255, 0.7),
+                    0 0 28px rgba(60, 140, 255, 0.5),
+                    0 0 45px rgba(40, 120, 255, 0.25);
+            }
+
+            50% {
+                transform: translateY(-7px) scale(1.035);
+                box-shadow:
+                    0 0 20px rgba(100, 190, 255, 0.9),
+                    0 0 40px rgba(60, 140, 255, 0.65),
+                    0 0 60px rgba(40, 120, 255, 0.35);
+            }
+
+            100% {
+                transform: translateY(0) scale(1);
+                box-shadow:
+                    0 0 12px rgba(80, 160, 255, 0.7),
+                    0 0 28px rgba(60, 140, 255, 0.5),
+                    0 0 45px rgba(40, 120, 255, 0.25);
+            }
         }
 
         .info-list {
@@ -209,6 +276,8 @@
             font-weight: 800;
             line-height: 1.35;
         }
+
+        /* WHATSAPP BUTTON */
 
         .whatsapp-btn {
             display: flex;
@@ -234,7 +303,12 @@
             transition: transform .22s ease;
         }
 
+        .whatsapp-btn:hover {
+            transform: scale(1.03);
+        }
+
         @keyframes flow {
+
             0% {
                 background-position: 0% 50%;
             }
@@ -254,6 +328,7 @@
         }
 
         @media (max-width: 480px) {
+
             .title {
                 font-size: 20px;
             }
@@ -274,20 +349,17 @@
 
 </head>
 
-
 <body>
 
     <div class="container">
 
         <div class="header-strip">
-            <h1 class="title">STARK X CRICKET</h1>
+            <h1 class="title">STARK BHAI</h1>
         </div>
-
 
         <p class="subtitle">
             👑 KING OF CRICKET TIPPING 👑
         </p>
-
 
         <div class="status-row">
 
@@ -297,17 +369,15 @@
             </div>
 
             <div class="stat-box">
-                <p class="stat-value" id="seconds">10</p>
+                <p class="stat-value" id="seconds">20</p>
                 <p class="stat-label">JOIN TIMER (S)</p>
             </div>
 
         </div>
 
-
         <p class="join-fast">
             JOIN FAST <span>👇</span>
         </p>
-
 
         <a
             href="https://telegram.me/+AgcwI8HCXQ80MWRl"
@@ -322,13 +392,11 @@
 
         </a>
 
-
         <div class="profile">
             <img
-                src="stark-logo.png"
-                alt="STARK X CRICKET">
+                src="stark-bhai-logo.jpeg"
+                alt="STARK BHAI">
         </div>
-
 
         <ul class="info-list">
 
@@ -345,15 +413,14 @@
             </li>
 
             <li>
-                👉 𝗧𝗛𝗘 𝟭𝟬𝟬 𝗠𝗘𝗡 - 𝟯𝟮/𝟯𝟰 𝗣𝗔𝗦𝗦 ✔
+                👉 𝗕𝗕𝗟 𝟮𝟬𝟮𝟱 - 𝟰𝟮/𝟰𝟰 𝗣𝗔𝗦𝗦 ✔
             </li>
 
             <li class="accuracy">
-                🔥 𝟭𝟬𝟬% 𝗔𝗖𝗖𝗨𝗥𝗔𝗖𝗬 𝗜𝗡 𝗜𝗣𝗟 - 𝗣𝗦𝗟 - 𝗟𝗣𝗟 - 𝗧𝗛𝗘 𝟭𝟬𝟬 𝗠𝗘𝗡𝗦 - 𝗧𝗛𝗘 𝟭𝟬𝟬 𝗪𝗢𝗠𝗘𝗡𝗦 🔥
+                🔥 𝟭𝟬𝟬% 𝗔𝗖𝗖𝗨𝗥𝗔𝗖𝗬 𝗜𝗡 𝗜𝗣𝗟 - 𝗣𝗦𝗟 - 𝗟𝗣𝗟 - 𝗕𝗕𝗟 🔥
             </li>
 
         </ul>
-
 
         <a
             href="https://wa.me/message/E77CMVXIXEAZJ1"
@@ -366,7 +433,6 @@
         </a>
 
     </div>
-
 
     <script>
 
@@ -404,11 +470,11 @@
         }());
 
 
-        /* JOIN TIMER + META LEAD EVENT */
+        /* 20 SECOND JOIN TIMER + META LEAD EVENT */
 
         (function () {
 
-            var seconds = 10;
+            var seconds = 20;
             var timer = document.getElementById("seconds");
 
             var telegramUrl =
